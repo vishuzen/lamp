@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('bg.png'); /* Use bg.png as the background image */
+            background-size: 100% 110%; /* Adjusted background image size */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative; /* Position relative for overlay */
+            filter: sepia(40%); /* Apply sepia filter for a vintage look */
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Further reduced transparency for overlay */
+            z-index: -1; /* Place the overlay behind the content */
+        }
+
+        form {
+            background-color: transparent; /* Fully transparent background */
+            padding: 30px; /* Increased padding for more space */
+            border: none; /* No visible border */
+            width: 35%; /* Adjust the width as needed */
+            text-align: center;
+            position: relative; /* Position relative for stacking order */
+            z-index: 1; /* Place the form above the overlay */
+        }
+
+        form label {
+            color: white; /* Set text color to white */
+            display: block; /* Ensure the label takes the full width */
+            margin-bottom: 10px; /* Add some space between label and input */
+        }
+
+        input {
+            width: calc(100% - 40px); /* Adjusted width to account for padding */
+            padding: 20px; /* Larger padding for bigger input fields */
+            margin: 10px 0; /* Space between input fields */
+            box-sizing: border-box;
+            border: none; /* No visible border */
+            border-radius: 30px; /* More curvy corners */
+            outline: none;
+            transition: box-shadow 0.3s, background-color 0.3s;
+            background-color: rgba(0, 0, 0, 0.3); /* Slightly darker background */
+            color: white; /* Text color */
+            font-family: 'Your-Input-Font', sans-serif; /* Replace 'Your-Input-Font' with the actual font name */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        input:hover {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* White glow effect on hover */
+        }
+
+        button {
+            width: calc(100% - 40px); /* Adjusted width to account for padding */
+            padding: 20px; /* Larger padding for bigger button */
+            background-color: rgba(255, 255, 255, 0.3); /* 30% transparent white background */
+            color: black; /* Text color for the login button */
+            border: none;
+            border-radius: 30px; /* More curvy corners */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Space between input fields and login button */
+            font-family: 'Your-Button-Font', sans-serif; /* Replace 'Your-Button-Font' with the actual font name */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white background on hover */
+        }
+    </style>
+</head>
+<body>
+
+<form id="loginForm">
+    <label for="username" style="display: none;">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Username" required>
+
+    <label for="password" style="display: none;">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+
+    <button type="button" onclick="validateLogin()">Login</button>
+</form>
+
+<script>
+    function validateLogin() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Perform basic validation (you should implement server-side validation in a real-world scenario)
+        if (username === 'zilu' && password === 'zilu123') {
+            
+            window.location.href = 'blank.html';
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    }
+</script>
+
+</body>
+</html>

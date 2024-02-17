@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lamp connect</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #3494e6, #ec6ead); /* Gradient background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            text-align: center; /* Center the content horizontally */
+        }
+
+        .image-container img {
+            display: inline-block; /* Make the image inline-block to center it */
+            max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+            vertical-align: middle; /* Align the image vertically in the middle */
+            transition: transform 0.3s ease; /* Add transition for transform */
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: -350px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1; /* Send overlay image behind */
+        }
+        
+        .base-image {
+            z-index: 1;
+            cursor: pointer; /* Add cursor pointer */
+            transition: transform 0.3s ease; /* Add transition for transform */
+        }
+
+        .base-image:hover {
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+        
+        .base-image-link {
+            display: inline-block;
+        }
+        
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <a href="https://t.me/callmezenitsu" target="_blank" class="base-image-link">
+        <img src="base.png" alt="Base Image" class="base-image">
+    </a>
+    <img src="overlay1.png" alt="Overlay Image" class="overlay-image">
+</div>
+
+<a class="logout-button" href="index.html">Logout</a>
+
+</body>
+</html>
